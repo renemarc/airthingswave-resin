@@ -1,0 +1,9 @@
+#
+# Scheduler for airthingswave-mqtt service
+#
+
+[Unit]
+Description=Send data from Airthings Waves to MQTT regularly
+
+[Timer]
+OnCalendar=hourly

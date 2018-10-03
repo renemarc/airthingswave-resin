@@ -1,0 +1,14 @@
+#
+# systemd service file
+#
+
+[Unit]
+Description=Poll Airthings Waves and publish their data via MQTT
+Wants=airthingswave-mqtt.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/python -m airthingswave-mqtt /usr/src/app/airthingswave-mqtt.yaml
+
+[Install]
+WantedBy=multi-user.target
